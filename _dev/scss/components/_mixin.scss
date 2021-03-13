@@ -1,0 +1,15 @@
+// mixin
+@use "variables" as var;
+
+// メディアクエリ
+@mixin mq($breakpoint: sp) {
+  @media #{map-get(var.$breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// SP用のvw計算
+@function getVw($size, $viewport: 375) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}

@@ -1,0 +1,33 @@
+// 基礎スタイル
+@use "variables" as var;
+@use "mixin" as mi;
+
+// see: https://ics.media/entry/200317/
+html {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans', Meiryo, sans-serif;
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pc {
+  @include mi.mq() {
+    display: none;
+  }
+}
+
+.sp {
+  display: none;
+  @include mi.mq() {
+    display: block;
+  }
+}

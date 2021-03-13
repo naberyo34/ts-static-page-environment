@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/main.ts',
+  entry: './_dev/js/index.ts',
   output: {
     path: `${__dirname}/dist`,
     filename: 'main.js',
@@ -22,11 +22,7 @@ module.exports = {
     extensions: ['.ts', '.js'],
     // 絶対パスimportのエイリアス
     alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
-  },
-  devServer: {
-    contentBase: 'dist',
-    open: true,
+      '@': path.resolve(__dirname, '_dev/js'),
+    },
   },
 };

@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+// 基礎スタイル
+@use "components/reset";
+@use "components/foundation";
+@use "components/variables";
+@use "components/mixin";
+
+// 固有スタイル
+@use "components/header";
+@use "section/tab";

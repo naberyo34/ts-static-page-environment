@@ -1,0 +1,50 @@
+{
+  "root": true,
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "airbnb-typescript/base",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "import"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ]
+  }
+}
+
+// JSモードにした場合はこちらの設定を利用
+// {
+//   "root": true,
+//   "env": {
+//     "browser": true,
+//     "jquery": true
+//   },
+//   "extends": ["airbnb-base/legacy", "prettier"],
+//   "plugins": ["import"],
+//   "rules": {
+//     // 無名関数を許可する (jQueryだと利用機会が多いため)
+//     "func-names": 0
+//   }
+// }
