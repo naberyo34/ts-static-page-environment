@@ -1,6 +1,5 @@
 export default class Tab {
   menu: NodeListOf<HTMLElement>;
-
   contents: NodeListOf<HTMLElement>;
 
   /**

@@ -42,7 +42,7 @@
     "husky": "4",
     "imagemin-pngquant": "^9.0.1",
     "lint-staged": "^10.5.4",
-    "prettier": "^2.0.5",
+    "prettier": "^2.2.1",
     "stylelint": "^13.12.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recess-order": "^2.3.0",
