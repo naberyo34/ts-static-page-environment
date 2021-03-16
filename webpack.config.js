@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  watch: true,
   mode: 'development',
   entry: './_dev/js/index.ts',
   output: {

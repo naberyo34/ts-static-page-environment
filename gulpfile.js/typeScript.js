@@ -2,7 +2,7 @@
 
 exports.typeScript = function typeScript(cb) {
   const { src, dest } = require('gulp');
-  // const eslint = require('gulp-eslint');
+  const eslint = require('gulp-eslint');
   const plumber = require('gulp-plumber');
   const notify = require('gulp-notify');
   const webpack = require('webpack');
@@ -19,9 +19,9 @@ exports.typeScript = function typeScript(cb) {
       )
     )
     // ESLint で引っかかった場合はエラーを表示
-    // .pipe(eslint({ useEslintrc: true }))
-    // .pipe(eslint.format())
-    // .pipe(eslint.failAfterError())
+    .pipe(eslint({ useEslintrc: true }))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
     // 書き出し
     .pipe(webpackStream(webpackConfig, webpack))
     .pipe(dest(config.dest.js));
