@@ -17,7 +17,7 @@ export default class Tab {
   /**
    * 指定したセレクタを利用してタブのイベントを作成する
    */
-  init = (): void => {
+  init = (): string => {
     const hide = () => {
       this.menu.forEach((elem) => delete elem.dataset.isActive);
       this.contents.forEach((elem) => delete elem.dataset.isActive);
@@ -30,5 +30,7 @@ export default class Tab {
         this.contents[index].dataset.isActive = 'true';
       })
     );
+
+    return 'success';
   };
 }
