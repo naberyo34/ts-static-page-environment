@@ -12,11 +12,23 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            },
+          },
+        ],
+      },
+      {
         test: /\.ts$/,
         use: 'ts-loader',
       },
     ],
   },
+  target: ['web', 'es5'],
   // importの解決方法を決める
   resolve: {
     // 拡張子省略の有効化

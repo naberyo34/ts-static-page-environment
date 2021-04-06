@@ -1,3 +1,4 @@
+// TSを利用する場合はこの設定ファイルを「.eslintrc」にリネームする
 {
   "root": true,
   "env": {
@@ -23,33 +24,5 @@
     "import/resolver": {
       "typescript": {}
     }
-  },
-  "rules": {
-    "no-param-reassign": [
-      "error",
-      {
-        "props": false
-      }
-    ],
-    "@typescript-eslint/lines-between-class-members": [
-      "error",
-      "always",
-      { "exceptAfterSingleLine": true }
-    ]
   }
 }
-
-// JSモードにした場合はこちらの設定を利用
-// {
-//   "root": true,
-//   "env": {
-//     "browser": true,
-//     "jquery": true
-//   },
-//   "extends": ["airbnb-base/legacy", "prettier"],
-//   "plugins": ["import"],
-//   "rules": {
-//     // 無名関数を許可する (jQueryだと利用機会が多いため)
-//     "func-names": 0
-//   }
-// }
