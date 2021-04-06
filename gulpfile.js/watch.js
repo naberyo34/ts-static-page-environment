@@ -5,7 +5,7 @@ exports.watch = function watch(cb) {
   const { watch } = require('gulp');
   const { pug } = require('./pug');
   const { scss } = require('./scss');
-  const { javaScript } = require('./javaScript');
+  const { copyJs } = require('./copyJs');
   const { reload } = require('./server');
   const config = require('./config');
 
@@ -14,8 +14,8 @@ exports.watch = function watch(cb) {
   watch(config.watch.pug, series(pug, reload));
   watch(config.watch.scss, series(scss, reload));
   // JSモードのときはJSのコピーも監視
-  if (!config.useTs) {
-    watch(config.watch.js, series(javaScript, reload))
+  if (!config.useWebpack) {
+    watch(config.watch.js, series(copyJs, reload))
   };
 
   // タスク完了

@@ -1,8 +1,12 @@
-# 普通の web ページを TS でサクッと作るミニマル環境
+# 静的ページ作成環境 (TS / ES6 / ES5 選択可)
 
-## 方針
+## モード切替方法
 
-- CSS とか画像を分割管理できないと色々困るので、webpack は TS のコンパイルとバンドルに徹する
-- 原則タスクは gulp で行い、webpack も webpack-stream 経由で動かす
-- gulpfile.js/config の useTs を false にするとJSそのままコピーモードに変わります
-- TSのコンパイルだけはwebpack側でwatchしているため、ホットリロードがかからない
+- gulpfile.js/config.js/ の useWebpack で JS を webpack でビルドするかそのままコピーするかを選べる
+- TS / JS を切り替える場合は webpack.dev.js および webpack.prod.js の entry の拡張子を変更する (初期設定: TS)
+- .eslintrc は使いたいもののファイル名を.eslintrc に変更する (初期設定: TS)
+
+## 残課題
+
+- eslint の設定を詰めきれていない
+- webpack 側に watch させているため JS のみホットリロードが実装できない(仕方ない)

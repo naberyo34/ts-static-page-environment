@@ -1,0 +1,13 @@
+// ES5を利用する場合はこの設定ファイルを「.eslintrc」にリネームする
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "jquery": true
+  },
+  "extends": ["airbnb-base/legacy", "prettier"],
+  "plugins": ["import"],
+  "rules": {
+    "func-names": 0
+  }
+}

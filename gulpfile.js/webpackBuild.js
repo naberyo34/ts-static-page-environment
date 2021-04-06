@@ -1,20 +1,20 @@
-// TypeScript ファイルをWebpackによってビルド
+// WebpackによってTS/JSをビルド
 
-exports.typeScript = function typeScript(cb) {
+exports.webpackBuild = function webpackBuild(cb) {
   const { src, dest } = require('gulp');
   const eslint = require('gulp-eslint');
   const plumber = require('gulp-plumber');
   const notify = require('gulp-notify');
   const webpack = require('webpack');
   const webpackStream = require('webpack-stream');
-  const webpackConfig = require('../webpack.config');
+  const webpackConfig = require('../webpack.prod');
   const config = require('./config');
 
   src(config.src.js)
     .pipe(
       plumber(
         notify.onError(
-          '⚠️ TypeScript (webpack) のビルドエラーが出ています ⚠️ <%= error.message %>'
+          '⚠️ Webpack のビルドエラーが出ています ⚠️ <%= error.message %>'
         )
       )
     )

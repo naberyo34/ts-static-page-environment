@@ -39,5 +39,5 @@ module.exports = {
     // 起動時に表示するパスを変えたい場合はここを変更しましょう
     startPath: './',
   },
-  useTs: true,
+  useWebpack: true,
 };
