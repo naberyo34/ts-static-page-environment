@@ -1,11 +1,14 @@
 #!/bin/bash
 
 echo "🍙 ボイラープレート環境構築ウィザードにようこそ"
+echo "ℹ️ 選択肢の数字を入力し、Enterで決定してください"
 
 # JS言語選択
+echo ""
 echo "💻 JS開発で利用したい言語を選んでください"
 select JS_LANG in "TypeScript" "ESNext" "ES5";
 do
+  echo ""
   case $JS_LANG in
     "TypeScript")
       echo "ℹ️ TypeScriptを利用します"
@@ -39,9 +42,11 @@ do
 done
 
 # ボイラープレート選択
+echo ""
 echo "💻 利用したいテンプレートエンジンを選んでください"
 select TEMPLATE_ENGINE in "pug" "EJS";
 do
+  echo ""
   case $TEMPLATE_ENGINE in
     "pug")
       echo "ℹ️ pugを利用します"
@@ -58,8 +63,10 @@ do
   esac
 done
 
+echo ""
 echo "🛠 setup フォルダを削除します"
 rm -rf ./setup
+echo ""
 echo "🍙 設定が完了しました!ファイル差分をコミットしてから利用を開始しましょう"
 echo "ℹ️ 設定を誤った場合はすべての差分を破棄してからウィザードを再実行してください"
 
