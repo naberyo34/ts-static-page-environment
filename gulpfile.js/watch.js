@@ -4,6 +4,7 @@ exports.watch = function watch(cb) {
   const { series } = require('gulp');
   const { watch } = require('gulp');
   const { pug } = require('./pug');
+  const { ejs } = require('./ejs');
   const { scss } = require('./scss');
   const { copyJs } = require('./copyJs');
   const { reload } = require('./server');
@@ -11,7 +12,11 @@ exports.watch = function watch(cb) {
 
   // watch task 実行
   // series で コンパイル -> ホットリロードを実行
-  watch(config.watch.pug, series(pug, reload));
+  if (config.useEjs) {
+    watch(config.watch.pug, series(ejs, reload));
+  } else {
+    watch(config.watch.pug, series(pug, reload));
+  }
   watch(config.watch.scss, series(scss, reload));
   // JSモードのときはJSのコピーも監視
   if (!config.useWebpack) {
