@@ -21,6 +21,32 @@ TypeScript / JavaScript (ESNext) / JavaScript (ES5) を選択できる静的ペ�
 
 # Getting Started
 
+## 0. 環境構築ウィザードを起動する
+
+**注意: 利用を始める前に必ず実施してください!!**
+
+本ボイラープレートでは、開発に利用する言語やテンプレートエンジンに応じて設定を自動で行ってくれる対話型シェルスクリプトが用意されています。プロジェクトのルートディレクトリで
+
+```
+bash init.sh
+```
+
+を実行し、環境構築ウィザードを起動しましょう。
+
+※設定をやり直したくなった場合は、出た差分をコミットせずにすべて破棄してから再実行してください。
+
+```
+ボイラープレート環境構築ウィザードにようこそ
+JS開発で利用したい言語を選んでください
+1) TypeScript
+2) ESNext
+3) ES5
+```
+
+というメッセージが表示されていれば起動できています。
+
+表示に従って数字を入力し、環境構築を進めましょう。
+
 ## 1. 利用言語を決める
 
 TypeScript / JavaScript (ESNext) / JavaScript (ES5) から、開発に使いたい言語を選択しましょう。
@@ -33,81 +59,17 @@ TypeScript / JavaScript (ESNext) / JavaScript (ES5) から、開発に使いた�
 
 `_dev/js/`配下で記述した TypeScript コードを `dist/assets/js/main.js` (デフォルト)にコンパイルします。webpack(ts-loader) によるビルドが行われるため`dist`配下に書き出された js の直接編集はできません。
 
-本ボイラープレートはデフォルトで TypeScript を利用するよう設定しているため、**追加の作業は不要**です。
+※本ボイラープレートは初期状態ではTypeScript向けの設定が行われています。
 
 ### JavaScript(ESNext)を使う場合
 
 `_dev/js/`配下で記述した JavaScript コードを `dist/assets/js/main.js` (デフォルト)にコンパイルします。webpack(babel-loader) によるビルドが行われるため`dist`配下に書き出された js の直接編集はできません。
-
-#### 必要作業
-
-- `webpack.dev.js` および `webpack.dev.prod.js`の設定を変更する
-
-```javascript
-entry: './_dev/js/index.ts',
-```
-
-を
-
-```javascript
-entry: './_dev/js/index.js',
-```
-
-に変更します。
-
-- `.eslintrc` を ESNext 用にする
-
-ルートディレクトリの`.eslintrc`は TypeScript 用のため、削除します。同階層にある`.eslintrc-es6`を`.eslintrc`にリネームしましょう。
-
-- `tsconfig.json`を削除する
-
-`tsconfig.json`は TypeScript 用の設定ファイルのため、削除します。
 
 ### JavaScript(ES5)を使う場合
 
 `_dev/js/`配下で記述した JavaScript コードを**コンパイルせずに**そのまま`dist/assets/js/main.js` (デフォルト)にコピーします。あえてレガシーな環境を利用したい場合や、jQuery を採用する場合に便利です。
 
 webpack でのビルドを行わないため、`dist`配下のコードは開発時のものと全く同じ状態になります。
-
-#### 必要作業
-
-- `gulpfile.js` の設定を変更する
-
-`gulpfile.js/config.js`の設定
-
-```javascript
-useWebpack: true,
-```
-
-を
-
-```javascript
-useWebpack: false,
-```
-
-に変更します。
-
-- `webpack.dev.js` および `webpack.dev.prod.js`の設定を変更する
-
-```javascript
-entry: './_dev/js/index.ts',
-```
-
-を
-
-```javascript
-entry: './_dev/js/index.js',
-```
-
-に変更します。
-
-- `.eslintrc` を ES5 用にする
-
-ルートディレクトリの`.eslintrc`は TypeScript 用のため、削除します。同階層にある`.eslintrc-es5`を`.eslintrc`にリネームしましょう。
-
-- `tsconfig.json`を削除する
-
-`tsconfig.json`は TypeScript 用の設定ファイルのため、削除します。
 
 ## 2. 開発コマンドを利用する
 
@@ -148,7 +110,7 @@ yarn
 - TS / ESNextを利用する場合はwebpack側でwatchタスクを実行するようになっているため、ホットリロードが行われません。JSの編集後は手動でページを更新してください。
 - たまにwatchタスクの調子が悪いときがあります。watchが走っていない場合は、gulpを再実行してください。
 
-### pug
+### EJS / pug
 
 - ディレクトリ、ファイル構成はサンプルのため、各自利用しやすいよう調整してください。
 - ファイル名に`_`がついているファイルはビルド対象から外されます。includeして利用するファイルには`_`をつけてください。
@@ -168,3 +130,8 @@ yarn
 
 - 画像ファイルは、gulpのタスクにより圧縮とコピーが行われます。
 - 圧縮設定は`gulpfile.js/images.js`から変更できます。
+
+## issue
+
+- EJS 対応
+- ウィザードでpackage.json自体を変更する仕様にすれば余計なパッケージを導入せずにすみそう
