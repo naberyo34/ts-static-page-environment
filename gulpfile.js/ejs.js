@@ -6,6 +6,7 @@ exports.ejs = function ejs(cb) {
   const htmlhint = require('gulp-htmlhint');
   const plumber = require('gulp-plumber');
   const notify = require('gulp-notify');
+  const rename = require('gulp-rename');
   const config = require('./config');
 
   src(config.src.ejs)
@@ -20,6 +21,7 @@ exports.ejs = function ejs(cb) {
       // 引数詳細は https://github.com/rogeriopvl/gulp-ejs
       ejs()
     )
+    .pipe(rename({ extname: '.html'}))
     // コンパイルが完了してからHTMLHintにかけ、引っかかった場合はエラーを表示
     .pipe(htmlhint())
     .pipe(htmlhint.failAfterError())
