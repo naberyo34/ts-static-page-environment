@@ -107,9 +107,9 @@ yarn
 | dev   | gulp でプレビューサーバーと watch タスクを開始します。 |
 | build | ビルド用の設定で`dist`配下のファイルを作成します。**webpack 等の設定が`dev`とは異なる**ため、納品時は必ずこちらのコマンドを利用してください。 |
 | eslint | ESLintを実行します。 (指摘のみ) |
-| eslint:fix | ESLintを実行します。 (fixできるものは修正します) |
+| eslint:fix | ESLintを実行します。 (fixできるものは修正します) |
 | stylelint | stylelintを実行します。 (指摘のみ) |
-| stylelint:fix | stylelintを実行します。(fixできるものは修正します) |
+| stylelint:fix | stylelintを実行します。 (fixできるものは修正します) |
 | format | prettierでフォーマットをかけます。 |
 | test | jest のテストスイートを実行します。 |
 
