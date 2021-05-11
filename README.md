@@ -61,8 +61,6 @@ TypeScript / JavaScript (ESNext) / JavaScript (ES5) から、開発に使いた�
 
 `_dev/js/`配下で記述した TypeScript コードを `dist/assets/js/main.js` (デフォルト)にコンパイルします。webpack(ts-loader) によるビルドが行われるため`dist`配下に書き出された js の直接編集はできません。
 
-※本ボイラープレートは初期状態ではTypeScript向けの設定が行われています。
-
 ### JavaScript(ESNext)を使う場合
 
 `_dev/js/`配下で記述した JavaScript コードを `dist/assets/js/main.js` (デフォルト)にコンパイルします。webpack(babel-loader) によるビルドが行われるため`dist`配下に書き出された js の直接編集はできません。
@@ -72,6 +70,8 @@ TypeScript / JavaScript (ESNext) / JavaScript (ES5) から、開発に使いた�
 `_dev/js/`配下で記述した JavaScript コードを**コンパイルせずに**そのまま`dist/assets/js/main.js` (デフォルト)にコピーします。あえてレガシーな環境を利用したい場合や、jQuery を採用する場合に便利です。
 
 webpack でのビルドを行わないため、`dist`配下のコードは開発時のものと全く同じ状態になります。
+
+この設定を選択するとデフォルトでjQueryのライブラリファイルが`_dev/js/lib`配下に配置されるため、すぐにjQueryを利用できます。
 
 ## 2. テンプレートエンジンを決める
 

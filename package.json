@@ -6,6 +6,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
+    "@babel/preset-typescript": "^7.13.0",
     "@prettier/plugin-pug": "^1.15.2",
     "@types/babel__core": "^7.1.14",
     "@types/babel__preset-env": "^7.9.1",
