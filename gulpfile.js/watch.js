@@ -13,7 +13,7 @@ exports.watch = function watch(cb) {
   // watch task 実行
   // series で コンパイル -> ホットリロードを実行
   if (config.useEjs) {
-    watch(config.watch.pug, series(ejs, reload));
+    watch(config.watch.ejs, series(ejs, reload));
   } else {
     watch(config.watch.pug, series(pug, reload));
   }

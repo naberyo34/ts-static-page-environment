@@ -32,7 +32,7 @@ module.exports = {
   // ウォッチ設定
   watch: {
     pug: './_dev/pug/**/*.pug',
-    ejs: './_dev/pug/**/*.ejs',
+    ejs: './_dev/ejs/**/*.ejs',
     scss: './_dev/scss/**/*.scss',
     js: './_dev/js/**/*.{js,ts}',
   },
