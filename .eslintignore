@@ -3,3 +3,4 @@ gulpfile.js/
 _dev/js/lib/
 dist/
 webpack.*.js
+setup

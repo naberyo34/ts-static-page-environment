@@ -1,10 +1,10 @@
 @charset "utf-8";
 
 // 基礎スタイル
-@use "components/reset";
-@use "components/foundation";
-@use "components/variables";
-@use "components/mixin";
+@use "modules/reset";
+@use "modules/foundation";
+@use "modules/variables";
+@use "modules/mixin";
 
 // 固有スタイル
-@use "components/header";
+@use "modules/header";

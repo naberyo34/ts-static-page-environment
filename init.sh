@@ -12,11 +12,13 @@ do
   case $JS_LANG in
     "TypeScript")
       echo "ℹ️ TypeScriptを利用します"
+      echo "🛠 dev/js 配下にサンプルファイルをコピーします"
+      cp -r ./setup/js-typescript ./_dev/js
       break;;
     "ESNext")
       echo "ℹ️ ESNext(ES6以降のJS)を利用します"
-      echo "🛠 dev/js 配下のサンプルファイルをJSに変更します"
-      mv ./_dev/js/index.ts ./_dev/js/index.js
+      echo "🛠 dev/js 配下にサンプルファイルをコピーします"
+      cp -r ./setup/js-es6 ./_dev/js
       echo "🛠 ESNext向けESLintの設定をコピーします"
       cp ./setup/.eslintrc-es6 .eslintrc
       echo "🛠 webpack.dev.js / prod.jsをJS向けに修正します"
@@ -26,8 +28,8 @@ do
       break;;
     "ES5")
       echo "ℹ️ ES5を利用します"
-      echo "🛠 dev/js 配下のサンプルファイルをJSに変更します"
-      mv ./_dev/js/index.ts ./_dev/js/index.js
+      echo "🛠 dev/js 配下にサンプルファイルをコピーします"
+      cp -r ./setup/js-es5 ./_dev/js
       echo "🛠 ES5向けESLintの設定をコピーします"
       cp ./setup/.eslintrc-es5 .eslintrc
       echo "🛠 gulpをwebpackを利用しない設定に修正します"
