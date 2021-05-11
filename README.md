@@ -59,7 +59,7 @@ TypeScript / JavaScript (ESNext) / JavaScript (ES5) から、開発に使いた�
 
 ### TypeScriptを使う場合
 
-`_dev/js/`配下で記述した TypeScript コードを `dist/assets/js/main.js` (デフォルト)にコンパイルします。webpack(ts-loader) によるビルドが行われるため`dist`配下に書き出された js の直接編集はできません。
+`_dev/js/`配下で記述した TypeScript コードを `dist/assets/js/main.js` (デフォルト)にコンパイルします。webpack(babel-loader) によるビルドが行われるため`dist`配下に書き出された js の直接編集はできません。
 
 ### JavaScript(ESNext)を使う場合
 
