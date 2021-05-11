@@ -14,11 +14,17 @@ do
       echo "ℹ️ TypeScriptを利用します"
       echo "🛠 dev/js 配下にサンプルファイルをコピーします"
       cp -r ./setup/js-typescript ./_dev/js
+      echo "🛠 不要なスクリプトファイルを削除します"
+      rm ./setup/pug/modules/_script-es5.pug
+      rm ./setup/ejs/modules/_script-es5.ejs
       break;;
     "ESNext")
       echo "ℹ️ ESNext(ES6以降のJS)を利用します"
       echo "🛠 dev/js 配下にサンプルファイルをコピーします"
       cp -r ./setup/js-es6 ./_dev/js
+      echo "🛠 不要なスクリプトファイルを削除します"
+      rm ./setup/pug/modules/_script-es5.pug
+      rm ./setup/ejs/modules/_script-es5.ejs
       echo "🛠 ESNext向けESLintの設定をコピーします"
       cp ./setup/.eslintrc-es6 .eslintrc
       echo "🛠 webpack.dev.js / prod.jsをJS向けに修正します"
@@ -30,6 +36,11 @@ do
       echo "ℹ️ ES5を利用します"
       echo "🛠 dev/js 配下にサンプルファイルをコピーします"
       cp -r ./setup/js-es5 ./_dev/js
+      echo "🛠 不要なスクリプトファイルを削除します"
+      rm ./setup/pug/modules/_script.pug
+      rm ./setup/ejs/modules/_script.ejs
+      mv ./setup/pug/modules/_script-es5.pug ./setup/pug/modules/_script.pug
+      mv ./setup/ejs/modules/_script-es5.ejs ./setup/ejs/modules/_script.ejs
       echo "🛠 ES5向けESLintの設定をコピーします"
       cp ./setup/.eslintrc-es5 .eslintrc
       echo "🛠 gulpをwebpackを利用しない設定に修正します"
