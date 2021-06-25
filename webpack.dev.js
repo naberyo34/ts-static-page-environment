@@ -13,7 +13,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /@babel\/runtime-corejs3/,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'babel-loader',
